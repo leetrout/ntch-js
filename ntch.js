@@ -1,13 +1,13 @@
 /*
 
 Retrieved 2/9/2019 from:
-https://www.color-blindness.com/color-name-hue-tool/js/ntc.js
+https://www.color-blindness.com/color-name-hue-tool/js/ntch.js
 
 
 +-----------------------------------------------------------------+
 |   Created by Chirag Mehta - http://chir.ag/tech/download/ntc    |
 |-----------------------------------------------------------------|
-|               ntc js (Name that Color JavaScript)               |
+|            ntch js (Name that Color & Hue JavaScript)           |
 +-----------------------------------------------------------------+
 
 All the functions, code, lists etc. have been written specifically
@@ -21,11 +21,11 @@ Attribution 2.5 http://creativecommons.org/licenses/by/2.5/
 
 Sample Usage:
 
-  <script type="text/javascript" src="ntc.js"></script>
+  <script type="text/javascript" src="ntch.js"></script>
 
   <script type="text/javascript">
 
-    var n_match  = ntc.name("#6195ED");
+    var n_match  = ntch.name("#6195ED");
     n_rgb = n_match[0]; // This is the RGB value of the closest matching color
     n_name = n_match[1]; // This is the text string for the name of the match
     n_shade_rgb = n_match[2]; // This is the RGB value for the name of colors shade
@@ -38,16 +38,16 @@ Sample Usage:
 
 */
 
-const ntc = {
+module.exports = {
   init: function() {
     let rgb;
     let hsl;
     let color;
-    for (let i = 0; i < ntc.names.length; i++) {
-      color = "#" + ntc.names[i][0];
-      rgb = ntc.rgb(color);
-      hsl = ntc.hsl(color);
-      ntc.names[i].push(rgb[0], rgb[1], rgb[2], hsl[0], hsl[1], hsl[2]);
+    for (let i = 0; i < this.names.length; i++) {
+      color = "#" + this.names[i][0];
+      rgb = this.rgb(color);
+      hsl = this.hsl(color);
+      this.names[i].push(rgb[0], rgb[1], rgb[2], hsl[0], hsl[1], hsl[2]);
     }
   },
 
@@ -70,11 +70,11 @@ const ntc = {
         color.substr(3, 1);
     }
 
-    const rgb = ntc.rgb(color);
+    const rgb = this.rgb(color);
     const r = rgb[0];
     const g = rgb[1];
     const b = rgb[2];
-    const hsl = ntc.hsl(color);
+    const hsl = this.hsl(color);
     const h = hsl[0];
     const s = hsl[1];
     const l = hsl[2];
@@ -84,25 +84,25 @@ const ntc = {
     let cl = -1;
     let df = -1;
 
-    for (let i = 0; i < ntc.names.length; i++) {
-      if (color == "#" + ntc.names[i][0]) {
+    for (let i = 0; i < this.names.length; i++) {
+      if (color == "#" + this.names[i][0]) {
         return [
-          "#" + ntc.names[i][0],
-          ntc.names[i][1],
-          ntc.shadergb(ntc.names[i][2]),
-          ntc.names[i][2],
+          "#" + this.names[i][0],
+          this.names[i][1],
+          this.shadergb(this.names[i][2]),
+          this.names[i][2],
           true,
         ];
       }
 
       ndf1 =
-        Math.pow(r - ntc.names[i][3], 2) +
-        Math.pow(g - ntc.names[i][4], 2) +
-        Math.pow(b - ntc.names[i][5], 2);
+        Math.pow(r - this.names[i][3], 2) +
+        Math.pow(g - this.names[i][4], 2) +
+        Math.pow(b - this.names[i][5], 2);
       ndf2 =
-        Math.abs(Math.pow(h - ntc.names[i][6], 2)) +
-        Math.pow(s - ntc.names[i][7], 2) +
-        Math.abs(Math.pow(l - ntc.names[i][8], 2));
+        Math.abs(Math.pow(h - this.names[i][6], 2)) +
+        Math.pow(s - this.names[i][7], 2) +
+        Math.abs(Math.pow(l - this.names[i][8], 2));
       ndf = ndf1 + ndf2 * 2;
       if (df < 0 || df > ndf) {
         df = ndf;
@@ -113,10 +113,10 @@ const ntc = {
     return cl < 0
       ? ["#000000", "Invalid Color: " + color, "#000000", "", false]
       : [
-        "#" + ntc.names[cl][0],
-        ntc.names[cl][1],
-        ntc.shadergb(ntc.names[cl][2]),
-        ntc.names[cl][2],
+        "#" + this.names[cl][0],
+        this.names[cl][1],
+        this.shadergb(this.names[cl][2]),
+        this.names[cl][2],
         false,
       ];
   },
@@ -166,9 +166,9 @@ const ntc = {
   },
 
   shadergb: function(shadename) {
-    for (let i = 0; i < ntc.shades.length; i++) {
-      if (shadename == ntc.shades[i][1]) {
-        return "#" + ntc.shades[i][0];
+    for (let i = 0; i < this.shades.length; i++) {
+      if (shadename == this.shades[i][1]) {
+        return "#" + this.shades[i][0];
       }
     }
     return "#000000";
@@ -1831,5 +1831,3 @@ const ntc = {
     ["CDD5D5", "Zumthor", "Grey"],
   ],
 };
-
-ntc.init();

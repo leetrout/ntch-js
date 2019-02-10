@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/leetrout/ntch-js#readme",
   "devDependencies": {
+    "browserify": "^16.2.3",
     "eslint": "^5.13.0",
     "eslint-config-google": "^0.12.0"
   }
