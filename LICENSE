@@ -1,17 +1,28 @@
-This is free and unencumbered software released into the public domain.
+Created by Chirag Mehta - http://chir.ag/projects/ntc
+Copyrighted to Chirag Mehta, 2001
 
-Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.
+Altered by Daniel Flueck to include Hue.
 
-In jurisdictions that recognize copyright laws, the author or authors
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.
+Code collected from https://www.color-blindness.com/color-name-hue/ 
+accessed on 2/9/2019.
+
+All the functions, code, lists etc. have been written specifically
+for the Name that Color JavaScript by Chirag Mehta unless otherwise
+specified.
+
+This code is released under the: Creative Commons License:
+Attribution 2.5 http://creativecommons.org/licenses/by/2.5/
+
+THE SOFTWARE IS PROVIDED UNDER THE TERMS OF THIS 
+CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK 
+IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE 
+OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR 
+COPYRIGHT LAW IS PROHIBITED.
+
+BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT 
+AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. THE LICENSOR 
+GRANTS YOU THE RIGHTS CONTAINED HERE IN CONSIDERATION OF YOUR 
+ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -21,4 +32,4 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to <http://unlicense.org>
+https://creativecommons.org/licenses/by/2.5/legalcode
