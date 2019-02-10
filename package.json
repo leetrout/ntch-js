@@ -1,0 +1,28 @@
+{
+  "name": "ntch",
+  "version": "1.0.0",
+  "description": "Color Name & Hue",
+  "main": "ntc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leetrout/ntch-js.git"
+  },
+  "keywords": [
+    "color",
+    "hue",
+    "colour"
+  ],
+  "author": "Lee Trout",
+  "license": "CC-BY-2.5",
+  "bugs": {
+    "url": "https://github.com/leetrout/ntch-js/issues"
+  },
+  "homepage": "https://github.com/leetrout/ntch-js#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-google": "^0.12.0"
+  }
+}
